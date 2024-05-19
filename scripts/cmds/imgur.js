@@ -3,7 +3,6 @@ const axios = require('axios');
 module.exports = {
   config: {
     name: "imgur",
-    aliases: ["link"],
     version: "1.0",
     author: "MR.AYAN",
     countDown: 1,
@@ -29,7 +28,7 @@ module.exports = {
       return message.reply(lado);
     } catch (error) {
       console.error(error);
-      return message.reply('Error🤣👍🏻');
+      return message.reply('⚠️ | Api Error');
     }
   }
 };
