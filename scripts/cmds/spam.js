@@ -1,31 +1,25 @@
 module.exports = {
-	config: {
-		name: "spam",
-		version: "1.0",
-		author: "MILAN",
-		countDown: 0,
-		role: 0,
-		shortDescription: "spam",
-		longDescription: "Do spam in a loop of any text 20 times",
-		category: "goatbot",
-		guide:  {
-			en: "{pn} <TextToSpam> <Number of times to spam>"
-		}
-	},  
-	onStart: async function ({ api, event, args }) {
-const permission = global.GoatBot.config.DEV;
-const fuck = args.join(" ");
-  if (!permission.includes(event.senderID)) {
-   api.sendMessage(fuck, event.threadID, event.messageID)    
-  }
+  config: {
+    name: "spam",
+    aurthor:"MR.AYAN",// Convert By MR.AYAN
+     role: 2,
+    shortDescription: "spam msg",
+    longDescription: "spam msg using bot",
+    category: "admin",
+    guide: "{pn}"
+  },
 
-  var message = args[0];
-  var length = args[1] || 5;
+  onStart: async function ({ api, event, args }) {
+	const amount = parseInt(args[0]);
+	const message = args.slice(1).join(" ");
 
- if (!message)
-return api.sendMessage(`🔰 | Type the text that you want to spam.. `, event.threadID, event.messageID);
-	var k = function (k) { api.sendMessage(k, event.threadID)};
-for (i = 0; i < `${length}`; i++) 
-{ k(`${message}`);} 
- }
+	if (isNaN(amount) || !message) {
+		return api.sendMessage("✨ spam cmd using Usage: %1spam (amount) (message)", event.threadID);
+	}
+
+	for (let i = 0; i < amount; i++) {
+		api.sendMessage(message, event.threadID);
+	}
+  },
 };
+
