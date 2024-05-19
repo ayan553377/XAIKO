@@ -2,9 +2,9 @@ const axios = require('axios');const fs = require('fs');
 const { shortenURL } = global.utils;
 module.exports = {
   config: {
-    name: "autourl", 
+    name: "autodl", 
     version: "1.0.1",
-    author: "MR.AYAN",
+    author: "Dipto",
     countDown: 0,
     role: 0,
     description: {
@@ -23,7 +23,7 @@ let dipto = event.body ? event.body : '';
   try {
     if (dipto.startsWith('https://vt.tiktok.com') || dipto.startsWith('https://www.tiktok.com/') || dipto.startsWith('https://www.facebook.com') || dipto.startsWith('https://www.instagram.com/') || dipto.startsWith('https://youtu.be/') || dipto.startsWith('https://youtube.com/') || dipto.startsWith('https://x.com/') || dipto.startsWith('https://twitter.com/') || dipto.startsWith('https://vm.tiktok.com') || dipto.startsWith('https://fb.watch')){
 
-      api.setMessageReaction("☢️", event.messageID, (err) => {}, true);
+      api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
 
     const path = __dirname + `/cache/diptoo.mp4`;
 
@@ -32,11 +32,11 @@ let dipto = event.body ? event.body : '';
     const vid = (await axios.get(data.result, { responseType: "arraybuffer", })).data;
 
     fs.writeFileSync(path, Buffer.from(vid, 'utf-8'));
-       api.setMessageReaction("✨", event.messageID, (err) => {}, true);
+       api.setMessageReaction("✅", event.messageID, (err) => {}, true);
 
     api.sendMessage({
 
-        body: `✅𝑽𝑰𝑫𝑬𝑶 𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫𝑰𝑵𝑮 𝑺𝑼𝑪𝑪𝑬𝑺𝑺𝑭𝑼𝑳\n\nDownload Url: ${shortUrl}`,
+        body: `✨✨✨✨✨`,
 
       attachment: fs.createReadStream(path)
     }, event.threadID, () => fs.unlinkSync(path), event.messageID)}
@@ -45,4 +45,4 @@ let dipto = event.body ? event.body : '';
 api.sendMessage(e, event.threadID, event.messageID);
   }
   },
-}
+  }
