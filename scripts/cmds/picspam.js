@@ -1,4 +1,4 @@
-.cmd install imgspam.js const { getStreamFromURL } = global.utils;
+const { getStreamFromURL } = global.utils;
 
 module.exports = {
     config: {
@@ -7,7 +7,7 @@ module.exports = {
         version: "2.0",
         author: "MR.AYAN",
         countDown: 3,
-        role: 2,
+        role: 0,
         description: {
             en: "𝗜𝗺𝗮𝗴𝗲 𝗦𝗽𝗮𝗺𝗺𝗲𝗿"
         },
@@ -22,12 +22,12 @@ module.exports = {
     onStart: async function ({ args, message, event }) {
         try{
         if(!(global.GoatBot.config.DEV).includes(event.senderID)){
-            return message.reply("Fuck your mother shit🥹💔");
+            return message.reply("Fuck your mother and sister🖕🏻");
         }else{
         let [imgUrl, count] = (args.join(' ')).split('|').map(item => item.trim());
         const r = [8,4,3,2,1,5,9,10,7,5,6];
         if (!args[0] && !imgUrl){
-          imgUrl = "https://telegra.ph/file/2471c9759156cff9c12f0.jpg";
+          imgUrl = "https://i.postimg.cc/VNWjYGbs/1716306868526.jpg";
         }
         else if(event.messageReply.attachments && event.messageReply.attachments.length > 0){
             imgUrl = event.messageReply.attachments[0].url;
@@ -53,4 +53,4 @@ module.exports = {
         message.reply("Error: " + err.message);
     }  
    }
-}; 
+};
