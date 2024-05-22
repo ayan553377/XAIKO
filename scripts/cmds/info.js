@@ -43,10 +43,10 @@ module.exports = {
     const botPrefix = global.GoatBot.config.prefix;
     const authorName = global.GoatBot.config.authorName;
     const authorFB = global.GoatBot.config.authorFB;
-    const authorInsta = "https://www.instagram.com/xnil867";
+    const authorInsta = "𝐍𝐎𝐍𝐄";
     const authorEmail = global.GoatBot.config.authorEmail;
-    const authorGithub = "https://github.com/X-nil143";
-    const status = "𝙎𝙞𝙣𝙜𝙡𝙚";
+    const authorGithub = "Ariyan-Ma";
+    const status = "𝐒𝐢𝐧𝐠𝐥𝐞";
     const timeStart = Date.now();
 
     const urls = JSON.parse(fs.readFileSync('scripts/cmds/assets/Ayan.json'));
