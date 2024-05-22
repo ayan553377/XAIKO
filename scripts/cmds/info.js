@@ -1,4 +1,4 @@
-+cmd install info.js const fs = require('fs');
+const fs = require('fs');
 const moment = require('moment-timezone');
 const NepaliDate = require('nepali-date');
 const fast = require('fast-speedtest-api');
