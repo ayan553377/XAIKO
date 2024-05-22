@@ -63,7 +63,7 @@ module.exports = {
 
     const ping = Date.now() - timeStart;
 
-    const replyMessage = `===「 𝗕𝗼𝘁 ✰ 𝗢𝘄𝗻𝗲𝗿 𝗜𝗻𝗳𝗼 」===
+    const replyMessage = `(☆^𝐁𝐎𝐓 〒 𝐎𝐖𝐍𝐄𝐑 𝐈𝐍𝐅𝐎^☆)
 ✧ ʙᴏᴛ ɴᴀᴍᴇ: ${botName}
 ✧ ʙᴏᴛ ᴘʀᴇғɪx: ${botPrefix}
 ✧ ᴀᴜᴛʜᴏʀ ɴᴀᴍᴇ: ${authorName}
