@@ -3,14 +3,14 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ ㋛︎ | 𝐌𝐈𝐑𝐀 𝐑𝐎𝐁𝐎𝐓 ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
+const doNotDelete = "[ 🌟 | ✨𝗔𝗬𝗔𝗡-𝗕𝗢𝗧✨ ]";
 
 module.exports = {
   config: {
     name: "help2",
     version: "1.17",
-    author: "𝐌𝐑.𝐀𝐘𝐀𝐍", // original author MR.AYAN
-    countDown: 10,
+    author: "MR.AYAN", //**orginal author fb I'd : https://m.me/NOOBS.DEVELOPER.AYAN **//
+    countDown: 5,
     role: 0,
     shortDescription: {
       en: "View command usage and list all commands directly",
@@ -26,45 +26,63 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, event, threadsData, role }) {
-    const { threadID } = event;
-    const threadData = await threadsData.get(threadID);
-    const prefix = getPrefix(threadID);
+  const { threadID } = event;
+  const threadData = await threadsData.get(threadID);
+  const prefix = getPrefix(threadID);
 
-    if (args.length === 0) {
+  if (args.length === 0) {
       const categories = {};
       let msg = "";
 
-      msg += `╔═════════════╗\n       ♡︎𝘾𝙈𝘿 𝙇𝙄𝙎𝙏♡︎\n╚═════════════╝`; // replace with your name 
+      msg += `╔═══════════╗\n     🌟𝗔𝗬𝗔𝗡-𝗕𝗢𝗧🌟\n╚═══════════╝`;
 
       for (const [name, value] of commands) {
-        if (value.config.role > 1 && role < value.config.role) continue;
+          if (value.config.role > 1 && role < value.config.role) continue;
 
-        const category = value.config.category || "Uncategorized";
-        categories[category] = categories[category] || { commands: [] };
-        categories[category].commands.push(name);
+          const category = value.config.category || "Uncategorized";
+          categories[category] = categories[category] || { commands: [] };
+          categories[category].commands.push(name);
       }
 
-      Object.keys(categories).forEach((category) => {
-        if (category !== "info") {
-          msg += `\n╭────────────────♡︎\n│ 『  ${category.toUpperCase()}  』`;
+      Object.keys(categories).forEach(category => {
+          if (category !== "info") {
+              msg += `\n╭─╮\n│『 ${category.toUpperCase()} 』`;
 
-          const names = categories[category].commands.sort();
-          for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 3).map((item) => `⌾${item}`);
-            msg += `\n│ ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
+              const names = categories[category].commands.sort();
+              for (let i = 0; i < names.length; i += 3) {
+                  const cmds = names.slice(i, i + 3).map(item => `✧${item}`);
+                  msg += `\n│${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
+              }
+
+              msg += `\n╰────────────ꔪ`;
           }
-
-          msg += `\n╰───────────ꔪ`;
-        }
       });
 
       const totalCommands = commands.size;
-      msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 [${totalCommands}] 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
-      msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱.\n`;
-      msg += `㋛︎ | 𝐌𝐈𝐑𝐀 𝐑𝐎𝐁𝐎𝐓`; // its not decoy so change it if you want 
+      msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
+      msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 [𝗔𝗬𝗔𝗡-𝗕𝗢𝗧] 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
+      msg += `🌟 | ✨𝗔𝗬𝗔𝗡-𝗕𝗢𝗧✨ `;
 
-      await message.reply(msg);
-    } else {
+
+      const helpListImages = [
+        "https://i.imgur.com/ZP0ilD1.jpeg", // don't change image
+        "https://i.imgur.com/h5LTRu3.jpeg",
+        "https://i.imgur.com/tj6dKu9.jpeg",
+        "https://i.imgur.com/4zC4JN9.jpeg",
+        "https://i.imgur.com/yBowyV0.jpeg",
+        "https://i.imgur.com/eQ4fyO3.jpeg",
+        // image link fixed bro🖤
+      ];
+
+
+      const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
+
+
+      await message.reply({
+          body: msg,
+          attachment: await global.utils.getStreamFromURL(helpListImage)
+      });
+  } else {
       const commandName = args[0].toLowerCase();
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
 
@@ -116,4 +134,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-} 
+  }
