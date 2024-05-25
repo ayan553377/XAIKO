@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = {
   config: {
-    name: "mira",
+    name: "ayan",
     version: "6.9.0",
     author: "MR.AYAN",
     countDown: 0,
@@ -15,7 +15,7 @@ module.exports = {
     }
   },
 onStart: async ({ api, event, args }) => {
-const link = "https://noobs-api.onrender.com/dipto/baby";
+const link = "https://noobs-api2.onrender.com/dipto/baby";
   const dipto = args.join(" ").toLowerCase();
       const uid = event.senderID;
       let command;
@@ -23,7 +23,7 @@ const link = "https://noobs-api.onrender.com/dipto/baby";
       let final;
       try{
       if(!args[0]){
-        const ran = ["𝐌𝐢𝐫𝐚 𝐢𝐬 𝐜𝐨𝐦𝐢𝐧𝐠 𝐡𝐞𝐫𝐞\n \n𝐇𝐨𝐰 𝐜𝐚𝐧 𝐢 𝐚𝐬𝐬𝐢𝐬𝐭 𝐲𝐨𝐮?","𝐇𝐞𝐥𝐥𝐨,𝐢 𝐚𝐦 𝐦𝐢𝐫𝐚 𝐫𝐨𝐛𝐨𝐭\n \n𝐇𝐨𝐰 𝐜𝐚𝐧  𝐚𝐬𝐬𝐢𝐬𝐭 𝐲𝐨𝐮","𝐇𝐞𝐥𝐥𝐨,𝐢 𝐚𝐦 𝐦𝐢𝐫𝐚 𝐤𝐢𝐦\n \n𝐇𝐨𝐰 𝐜𝐚𝐧 𝐢 𝐚𝐬𝐬𝐢𝐬𝐭 𝐲𝐨𝐮?"];
+        const ran = ["𝗔𝘆𝗮𝗻 𝗶𝘀 𝗰𝗼𝗺𝗶𝗻𝗴 𝗵𝗲𝗿𝗲\n \n𝗛𝗼𝘄 𝗰𝗮𝗻 𝗶 𝗮𝘀𝘀𝗶𝘀𝘁 𝘆𝗼𝘂?","𝗛𝗲𝗹𝗹𝗼,𝗶 𝗮𝗺 𝗔𝘆𝗮𝗻 𝗥𝗼𝗯𝗼𝘁\n \n𝗛𝗼𝘄 𝗰𝗮𝗻 𝗶 𝗮𝘀𝘀𝗶𝘀𝘁 𝘆𝗼𝘂?","𝗛𝗲𝗹𝗹𝗼,𝗶 𝗮𝗺 𝗠𝗥.𝗔𝗬𝗔𝗡\n \n𝗛𝗼𝘄 𝗰𝗮𝗻 𝗶 𝗮𝘀𝘀𝗶𝘀𝘁 𝘆𝗼𝘂?"];
         const r = ran[Math.floor(Math.random() * ran.length)];
     return api.sendMessage(r,event.threadID,event.messageID);
       }
